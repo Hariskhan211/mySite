@@ -17,17 +17,126 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: white;
+  /* background-color: #0d0c0d; */
+  background-image: url(../public/bg-wave2.svg);
+  background-size: cover;
+  
 }
-
+span{
+    color:#FF4191
+  }
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #ef0475;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply the animation to the h1 element */
+.header-title {
+  font-weight: bolder;
+  font-size: 3rem;
+  text-shadow: 0 0 10px #FF4191, 0 0 20px #FF4191, 0 0 30px #FF4191;
+  animation: slideInFromLeft 1s ease-out;
+  overflow: hidden;
+  border-right: .15em solid #FF4191;
+  white-space: nowrap;
+  letter-spacing: .15em;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end backwards;
+
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 24% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #FF4191; }
+}
+.backgroundImage {
+  background-image: url(../public/removedBg.png);
+  background-size: cover;
+  
+}
+.will-animate-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.will-animate-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate .will-animate-left,
+.animate .will-animate-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Ensure these styles are not overridden */
+.will-animate-left,
+.will-animate-right {
+  display: inline-block;
+}
+.gradient-text {
+  background: linear-gradient(45deg, #FF4191, #038bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skill-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #FF4191, 0 0 20px #FF4191, 0 0 30px #FF4191;
+}
+.custom-list-item {
+  position: relative;
+}
+
+.custom-list-item::before {
+  content: "•";
+  color: white; /* Use your preferred color here */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  left: -5px;
+}
+.bg-image{
+ 
 }
