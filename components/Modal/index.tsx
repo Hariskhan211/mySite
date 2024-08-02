@@ -5,7 +5,7 @@ interface index {
   onClose: () => void;
 }
 
-const index: React.FC<index> = ({ isOpen, onClose }) => {
+const Index: React.FC<index> = ({ isOpen, onClose }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,4 +49,4 @@ const index: React.FC<index> = ({ isOpen, onClose }) => {
   );
 };
 
-export default index;
+export default Index;
