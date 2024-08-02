@@ -3,7 +3,11 @@ import { useState, useEffect, useRef } from 'react';
 import navList from "@/constants/navList";
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-export default function Nav({ dancingScriptClass }) {
+interface NavProps {
+    dancingScriptClass: string;
+  }
+
+export default function Nav({ dancingScriptClass }: NavProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navRef = useRef(null);
 
