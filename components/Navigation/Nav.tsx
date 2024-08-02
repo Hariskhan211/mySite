@@ -16,8 +16,8 @@ export default function Nav({ dancingScriptClass }: NavProps) {
     };
 
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (navRef.current && !navRef.current.contains(event.target)) {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (navRef.current && !navRef.current.contains(event.target as Node)) {
                 setIsMenuOpen(false);
             }
         };
